@@ -1,4 +1,3 @@
-
 const deutsch = ["Stein", "Papier", "Schere"];
 const english = ["Rock", "Paper", "Scissors"];
 const espanol = ["Piedra", "Papel", "Tijera"];
@@ -11,7 +10,7 @@ const occitan = ["Pèira", "Fuèlha", "Talhants"];
 const portugues = ["Pedra", "Papel", "Tesoura"];
 const russian = ["Камень", "Бумага", "Ножницы"];
 
-const name = {
+const languagesList = {
     "deutsch": deutsch,
     "english": english,
     "espanol": espanol,
@@ -33,7 +32,7 @@ function chosen(button){
 
 function chooseLangage(langage){
     cardNames = document.querySelectorAll("#player p");
-    for(let i=0; i < cardNames.length; i++) cardNames[i].innerHTML = name[langage][i];
+    for(let i=0; i < cardNames.length; i++) cardNames[i].innerHTML = languagesList[langage][i];
 }
 
 function display(idCard){
