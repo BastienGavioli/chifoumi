@@ -1,7 +1,7 @@
 # Rock-Paper-Scissors
 ## _By [BastienGavioli](https://github.com/BastienGavioli)_
 
-Result : https://github.com/BastienGavioli/chifoumi/src/index.html
+[The result](./src/index.html)
 
 ## Available languages
 - Deutsch
