@@ -1,0 +1,16 @@
+#cards{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+button{
+    margin: 5px;
+    border: solid 2px black;
+    font-size: 20px;
+    max-width: 112px;
+}
+
+#cards img{
+    max-width: 100px;
+}
