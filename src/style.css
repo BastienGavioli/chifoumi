@@ -1,4 +1,4 @@
-#cards{
+#cards, #fighter{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -11,6 +11,31 @@ button{
     max-width: 112px;
 }
 
-#cards img{
+#cards img, #fighter img{
     max-width: 100px;
+}
+
+#rock, #adRock {
+    background-color: blue;
+}
+
+#paper, #adPaper{
+    background-color: red;
+}
+
+#scissors, #adScissors{
+    background-color: green;
+}
+
+#bastien{
+    background-color: black;
+    color: #0061e4;
+}
+
+.hidden{
+    display: none;
+}
+
+.visible{
+    display: block;
 }
