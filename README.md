@@ -3,6 +3,11 @@
 
 [The result](./src/index.html)
 
+## Description
+
+I had learned the JavaScript langage for two weeks when I decided to make a Website implementing the Rock-Paper-Scissors
+game in order to practice.
+
 ## Available languages
 - Deutsch
 - English
@@ -14,8 +19,3 @@
 - Português
 - Русский
 - 日本語
-
-## Description
-
-I had learned the JavaScript langage for two weeks when I decided to make a Website implementing the Rock-Paper-Scissors
-game in order to practice.
