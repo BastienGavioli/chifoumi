@@ -22,6 +22,7 @@ const playerScoreDisplay = document.getElementById("playerScore");
 const fighterScoreDisplay = document.getElementById("fighterScore");
 let playerScore = 0;
 let fighterScore = 0;
+const languagesDisplay = document.getElementById("languages");
 
 function chosenCard(button){
     for (const card of tabCards) card.style.border = "solid 2px black";
@@ -48,6 +49,16 @@ function display(idCard){
     document.getElementsByClassName("visible")[0].classList.add("hidden");
     document.getElementsByClassName("visible")[0].classList.remove("visible");
     document.getElementById(`${idCard}`).classList.add("visible");
+}
+
+function displayParameters(){
+    if(languagesDisplay.classList.contains("hidden")){
+        languagesDisplay.classList.add("visible");
+        languagesDisplay.classList.remove("hidden");
+    } else {
+        languagesDisplay.classList.add("hidden");
+        languagesDisplay.classList.remove("visible");
+    }
 }
 
 function play(){

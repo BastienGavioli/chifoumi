@@ -26,10 +26,10 @@ nav > a{
 
 #parameters img{
     width: 50px;
+    cursor: pointer;
 }
 
 #languages{
-    display: none;
     padding: 1px 15px;
     position: absolute;
     top: 50px;
@@ -39,9 +39,6 @@ nav > a{
 
 #languages a{
     cursor: pointer;
-}
-#parameters:hover #languages{
-    display: block;
 }
 
 h4{
