@@ -79,6 +79,7 @@ button{
 #playButton{
     margin-top: 30px;
     padding: 2px 25px;
+    color: gray;
 }
 
 #fighter{
@@ -96,4 +97,10 @@ button{
 
 .visible{
     display: block;
+}
+
+#result{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
 }

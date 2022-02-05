@@ -11,16 +11,31 @@ const languagesList = {
     "russian": russian = ["Камень", "Бумага", "Ножницы", "НА ДРУГИХ ЯЗЫКАХ"],
     "spanish": spanish = ["Piedra", "Papel", "Tijera", "IDIOMAS"]
 }
+let selectedCard = null;
+const rockCard = document.getElementById("rock");
+const paperCard = document.getElementById("paper");
+const scissorsCard = document.getElementById("scissors");
+const tabCards = [rockCard, paperCard, scissorsCard];
+const cardNames = document.querySelectorAll("#player span");
+const fighterCardNames = document.querySelectorAll("#fighter-cards span");
 
 function chosenCard(button){
-    const tabCards = document.getElementsByTagName("button");
     for (const card of tabCards) card.style.border = "solid 2px black";
-    button.style.border = "solid 5px black";
+    if(tabCards.includes(button)) {
+        button.style.border = "solid 5px black";
+        selectedCard = button;
+        document.getElementById("playButton").style.color = "black";
+    } else{
+        selectedCard = null;
+        document.getElementById("playButton").style.color = "gray";
+    }
 }
 
 function chooseLanguage(language){
-    let cardNames = document.querySelectorAll("#player span");
-    for(let i=0; i < cardNames.length; i++) cardNames[i].innerHTML = languagesList[language][i];
+    for(let i=0; i < cardNames.length; i++) {
+        cardNames[i].innerHTML = languagesList[language][i];
+        fighterCardNames[i].innerHTML = languagesList[language][i];
+    }
     document.getElementById("languages-title").innerHTML = languagesList[language][3];
 }
 
@@ -31,16 +46,38 @@ function display(idCard){
 }
 
 function play(){
-    const robotHand = Math.floor(Math.random()*3);
-    switch (robotHand) {
-        case 0:
-            display("adRock");
-            break;
-        case 1:
-            display("adPaper");
-            break;
-        case 2:
-            display("adScissors");
-            break;
+    if(selectedCard!==null){
+        const robotHand = Math.floor(Math.random()*3);
+        switch (robotHand) {
+            case 0:
+                display("adRock");
+                break;
+            case 1:
+                display("adPaper");
+                break;
+            case 2:
+                display("adScissors");
+                break;
+        }
+        updatePoints(robotHand);
+    }
+}
+
+function updatePoints(robotHand){
+    const result = document.querySelector("main p");
+    if((robotHand===0 && selectedCard===rockCard) || (robotHand===1 && selectedCard===paperCard) ||
+        (robotHand===2 && selectedCard===scissorsCard)){
+        result.innerHTML = "DRAW!";
+        result.style.color = "yellow";
+    }
+
+    else if((robotHand===0 && selectedCard===paperCard) || (robotHand===1 && selectedCard===scissorsCard) ||
+        (robotHand===2 && selectedCard===rockCard)){
+        result.innerHTML = "YOU WIN!";
+      result.style.color = "green";
+    }
+    else{
+        result.innerHTML = "YOU LOSE!";
+        result.style.color = "red";
     }
 }
