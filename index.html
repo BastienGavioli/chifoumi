@@ -9,35 +9,64 @@
     <script defer type="text/javascript" src="src/script.js"></script>
 </head>
 <body>
+<header>
+    <nav>
+        <a href="index.html" style="color: white;">CHIFOUMI</a>
+        <div id="parameters">
+            <img src="resources/parameters.png" alt="Parameters">
+            <div id="languages">
+                <h4 id="languages-title">LANGUAGES</h4>
+                <p><a onclick="chooseLanguage('german');">Deutsch</a></p>
+                <p><a onclick="chooseLanguage('english');">English</a></p>
+                <p><a onclick="chooseLanguage('spanish');">Español</a></p>
+                <p><a onclick="chooseLanguage('french');">Français</a></p>
+                <p><a onclick="chooseLanguage('italian');">Italiano</a></p>
+                <p><a onclick="chooseLanguage('dutch');">Nederlands</a></p>
+                <p><a onclick="chooseLanguage('occitan');">Occitan</a></p>
+                <p><a onclick="chooseLanguage('portuguese');">Português</a></p>
+                <p><a onclick="chooseLanguage('russian');">Русский</a></p>
+                <p><a onclick="chooseLanguage('japanese');">日本語</a></p>
+            </div>
+        </div>
+    </nav>
+</header>
+<main>
     <div id="player">
         <div id="cards">
-            <button onclick="chosen(this);" id="rock">
-                <img src="resources/rock.png" alt="">Pierre
+            <button onclick="chosenCard(this);" id="rock">
+                <img src="resources/rock.png" alt="">
+                <span>Pierre</span>
             </button>
-            <button onclick="chosen(this);" id="paper">
-                <img src="resources/paper.png" alt="">Feuille
+            <button onclick="chosenCard(this);" id="paper">
+                <img src="resources/paper.png" alt="">
+                <span>Feuille</span>
             </button>
-            <button onclick="chosen(this);" id="scissors">
-                <img src="resources/scissors.png" alt="">Ciseaux
+            <button onclick="chosenCard(this);" id="scissors">
+                <img src="resources/scissors.png" alt="">
+                <span>Ciseaux</span>
             </button>
         </div>
-        <button id=playButton" onclick="play()">Jouer</button>
+        <button  id="playButton" onclick="play()">PLAY</button>
     </div>
     <div id="fighter">
         <div id="fighter-cards">
             <button class="visible" id="bastien">
-                <img src="resources/b.png" alt="">Bastien
+                <img src="resources/b.png" alt=""><span>Bastien</span>
             </button>
-            <button class="hidden" id="adRock" onclick="chosen(this);">
-                <img src="resources/rock.png" alt="">Pierre
+            <button class="hidden" id="adRock" onclick="chosenCard(this);">
+                <img src="resources/rock.png" alt="">
+                <span>Pierre</span>
             </button>
-            <button class="hidden" id="adPaper" onclick="chosen(this);">
-                <img src="resources/paper.png" alt="">Feuille
+            <button class="hidden" id="adPaper" onclick="chosenCard(this);">
+                <img src="resources/paper.png" alt="">
+                <span>Feuille</span>
             </button>
-            <button class="hidden" id="adScissors" onclick="chosen(this);">
-                <img src="resources/scissors.png" alt="">Ciseaux
+            <button class="hidden" id="adScissors" onclick="chosenCard(this);">
+                <img src="resources/scissors.png" alt="">
+                <span>Ciseaux</span>
             </button>
         </div>
     </div>
+</main>
 </body>
 </html>

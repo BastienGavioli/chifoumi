@@ -1,3 +1,52 @@
+body{
+    margin: 0;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    background-color: rebeccapurple;
+    color: white;
+}
+
+#parameters{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: relative;
+}
+
+#parameters img{
+    width: 50px;
+}
+
+#languages{
+    display: none;
+    padding: 1px 15px;
+    position: absolute;
+}
+
+#languages a{
+    cursor: pointer;
+}
+#parameters:hover #languages{
+    display: block;
+    background-color: #0061e4;
+}
+
+h4{
+    text-align: center;
+    color: chartreuse;
+}
+
+main{
+    margin-top: 50px;
+}
+
+#player{
+    text-align: center;
+}
+
 #cards, #fighter{
     display: flex;
     justify-content: center;
@@ -25,6 +74,15 @@ button{
 
 #scissors, #adScissors{
     background-color: green;
+}
+
+#playButton{
+    margin-top: 30px;
+    padding: 2px 25px;
+}
+
+#fighter{
+    margin-top: 40px;
 }
 
 #bastien{

@@ -1,38 +1,27 @@
-const deutsch = ["Stein", "Papier", "Schere"];
-const english = ["Rock", "Paper", "Scissors"];
-const espanol = ["Piedra", "Papel", "Tijera"];
-const esperento = ["Ŝtono", "Papero", "Tondilo"]
-const francais = ["Pierre", "Papier", "Ciseaux"];
-const italiano = ["Sasso", "Carta", "Forbici"];
-const japanese = ["グー", "パー", "チョキ"];
-const nederlands = ["Steen", "Papier", "Schaar"];
-const occitan = ["Pèira", "Fuèlha", "Talhants"];
-const portugues = ["Pedra", "Papel", "Tesoura"];
-const russian = ["Камень", "Бумага", "Ножницы"];
-
 const languagesList = {
-    "deutsch": deutsch,
-    "english": english,
-    "espanol": espanol,
-    "esperento": esperento,
-    "francais": francais,
-    "italiano" : italiano,
-    "japanese": japanese,
-    "nederlands": nederlands,
-    "occitan": occitan,
-    "portugues": portugues,
-    "russian": russian
+    "dutch": dutch = ["Steen", "Papier", "Schaar", "TALEN"],
+    "english": english = ["Rock", "Paper", "Scissors", "LANGUAGES"],
+    "esperento": esperento = ["Ŝtono", "Papero", "Tondilo", "LINGVOJ"],
+    "french": french = ["Pierre", "Papier", "Ciseaux", "LANGUES"],
+    "german": german = ["Stein", "Papier", "Schere", "SPRACHEN"],
+    "italian" : italian = ["Sasso", "Carta", "Forbici", "LINGUE"],
+    "japanese": japanese = ["グー", "パー", "チョキ", "他言語版"],
+    "occitan": occitan = ["Pèira", "Fuèlha", "Talhants", "LENGAS"],
+    "portuguese": portuguese = ["Pedra", "Papel", "Tesoura", "LÍNGUAS"],
+    "russian": russian = ["Камень", "Бумага", "Ножницы", "НА ДРУГИХ ЯЗЫКАХ"],
+    "spanish": spanish = ["Piedra", "Papel", "Tijera", "IDIOMAS"]
 }
 
-function chosen(button){
+function chosenCard(button){
     const tabCards = document.getElementsByTagName("button");
     for (const card of tabCards) card.style.border = "solid 2px black";
     button.style.border = "solid 5px black";
 }
 
-function chooseLangage(langage){
-    cardNames = document.querySelectorAll("#player p");
-    for(let i=0; i < cardNames.length; i++) cardNames[i].innerHTML = languagesList[langage][i];
+function chooseLanguage(language){
+    let cardNames = document.querySelectorAll("#player span");
+    for(let i=0; i < cardNames.length; i++) cardNames[i].innerHTML = languagesList[language][i];
+    document.getElementById("languages-title").innerHTML = languagesList[language][3];
 }
 
 function display(idCard){
