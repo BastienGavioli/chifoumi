@@ -60,7 +60,6 @@ main{
 #cards, #fighter{
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
 }
 
 button{
@@ -71,7 +70,8 @@ button{
 }
 
 #cards img, #fighter img{
-    max-width: 100px;
+    max-width: 100%;
+    height: auto;
 }
 
 #rock, #adRock {

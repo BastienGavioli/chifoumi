@@ -1,7 +1,7 @@
 const languagesList = {
     "dutch": dutch = ["Steen", "Papier", "Schaar", "TALEN", "SPEEL"],
     "english": english = ["Rock", "Paper", "Scissors", "LANGUAGES", "PLAY"],
-    "esperanto": esperento = ["Ŝtono", "Papero", "Tondilo", "LINGVOJ", "LUDI"],
+    "esperanto": esperanto = ["Ŝtono", "Papero", "Tondilo", "LINGVOJ", "LUDI"],
     "french": french = ["Pierre", "Papier", "Ciseaux", "LANGUES", "JOUER"],
     "german": german = ["Stein", "Papier", "Schere", "SPRACHEN", "SPIELEN"],
     "italian" : italian = ["Sasso", "Carta", "Forbici", "LINGUE", "GIOCA"],
