@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>Shifumi</title>
+    <title>Chifoumi</title>
     <link rel="stylesheet" type="text/css" href="src/style.css">
     <link rel="stylesheet" type="text/css" href="src/style.css">
     <meta charset="UTF-8">
@@ -35,35 +35,37 @@
         <div id="cards">
             <button onclick="chosenCard(this);" id="rock">
                 <img src="resources/rock.png" alt="">
-                <span>Pierre</span>
+                <span>Rock</span>
             </button>
             <button onclick="chosenCard(this);" id="paper">
                 <img src="resources/paper.png" alt="">
-                <span>Feuille</span>
+                <span>Paper</span>
             </button>
             <button onclick="chosenCard(this);" id="scissors">
                 <img src="resources/scissors.png" alt="">
-                <span>Ciseaux</span>
+                <span>Scissors</span>
             </button>
         </div>
+        <p id="playerScore">0</p>
         <button  id="playButton" onclick="play()">PLAY</button>
+        <p id="fighterScore">0</p>
     </div>
     <div id="fighter">
-        <div id="fighter-cards">
+        <div id="fighterCards">
             <button class="visible" id="bastien">
                 <img src="resources/b.png" alt="">
             </button>
             <button class="hidden" id="adRock" onclick="chosenCard(this);">
                 <img src="resources/rock.png" alt="">
-                <span>Pierre</span>
+                <span>Rock</span>
             </button>
             <button class="hidden" id="adPaper" onclick="chosenCard(this);">
                 <img src="resources/paper.png" alt="">
-                <span>Feuille</span>
+                <span>Paper</span>
             </button>
             <button class="hidden" id="adScissors" onclick="chosenCard(this);">
                 <img src="resources/scissors.png" alt="">
-                <span>Ciseaux</span>
+                <span>Scissors</span>
             </button>
         </div>
     </div>

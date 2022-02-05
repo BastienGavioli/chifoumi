@@ -1,12 +1,20 @@
 body{
     margin: 0;
+    background-image: url("../resources/background.jpg");
 }
 
 nav{
     display: flex;
     justify-content: space-between;
-    background-color: rebeccapurple;
-    color: white;
+    background-color: #663399;
+}
+
+nav > a{
+    align-self: center;
+    margin-left: 20px;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 30px;
 }
 
 #parameters{
@@ -24,6 +32,7 @@ nav{
     display: none;
     padding: 1px 15px;
     position: absolute;
+    top: 50px;
 }
 
 #languages a{
@@ -36,11 +45,11 @@ nav{
 
 h4{
     text-align: center;
-    color: chartreuse;
+    color: #7FFF00;
 }
 
 main{
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 #player{
@@ -65,29 +74,29 @@ button{
 }
 
 #rock, #adRock {
-    background-color: blue;
+    background-color: #0000FF;
 }
 
 #paper, #adPaper{
-    background-color: red;
+    background-color: #FF0000;
 }
 
 #scissors, #adScissors{
-    background-color: green;
+    background-color: #008000   ;
+}
+
+#playerScore, #fighterScore{
+    font-size: 20px;
 }
 
 #playButton{
-    margin-top: 30px;
     padding: 2px 25px;
+    background-color: #663399;
     color: gray;
 }
 
-#fighter{
-    margin-top: 40px;
-}
-
 #bastien{
-    background-color: black;
+    background-color: #000000;
     color: #0061e4;
 }
 

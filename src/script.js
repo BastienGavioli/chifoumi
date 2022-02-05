@@ -8,7 +8,7 @@ const languagesList = {
     "japanese": japanese = ["グー", "パー", "チョキ", "他言語版"],
     "occitan": occitan = ["Pèira", "Fuèlha", "Talhants", "LENGAS"],
     "portuguese": portuguese = ["Pedra", "Papel", "Tesoura", "LÍNGUAS"],
-    "russian": russian = ["Камень", "Бумага", "Ножницы", "НА ДРУГИХ ЯЗЫКАХ"],
+    "russian": russian = ["Камень", "Бумага", "Ножницы", "ЯЗЫКОВ"],
     "spanish": spanish = ["Piedra", "Papel", "Tijera", "IDIOMAS"]
 }
 let selectedCard = null;
@@ -18,13 +18,17 @@ const scissorsCard = document.getElementById("scissors");
 const tabCards = [rockCard, paperCard, scissorsCard];
 const cardNames = document.querySelectorAll("#player span");
 const fighterCardNames = document.querySelectorAll("#fighter-cards span");
+const playerScoreDisplay = document.getElementById("playerScore");
+const fighterScoreDisplay = document.getElementById("fighterScore");
+let playerScore = 0;
+let fighterScore = 0;
 
 function chosenCard(button){
     for (const card of tabCards) card.style.border = "solid 2px black";
     if(tabCards.includes(button)) {
         button.style.border = "solid 5px black";
         selectedCard = button;
-        document.getElementById("playButton").style.color = "black";
+        document.getElementById("playButton").style.color = "#FFFFFF";
     } else{
         selectedCard = null;
         document.getElementById("playButton").style.color = "gray";
@@ -64,20 +68,24 @@ function play(){
 }
 
 function updatePoints(robotHand){
-    const result = document.querySelector("main p");
+    const result = document.getElementById("result");
     if((robotHand===0 && selectedCard===rockCard) || (robotHand===1 && selectedCard===paperCard) ||
         (robotHand===2 && selectedCard===scissorsCard)){
         result.innerHTML = "DRAW!";
-        result.style.color = "yellow";
+        result.style.color = "#D4AC0D";
     }
 
     else if((robotHand===0 && selectedCard===paperCard) || (robotHand===1 && selectedCard===scissorsCard) ||
         (robotHand===2 && selectedCard===rockCard)){
         result.innerHTML = "YOU WIN!";
-      result.style.color = "green";
+        result.style.color = "green";
+        playerScore++;
+        playerScoreDisplay.innerHTML = playerScore.toString();
     }
     else{
         result.innerHTML = "YOU LOSE!";
         result.style.color = "red";
+        fighterScore++;
+        fighterScoreDisplay.innerHTML = fighterScore.toString();
     }
 }
