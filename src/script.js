@@ -16,10 +16,12 @@ const rockCard = document.getElementById("rock");
 const paperCard = document.getElementById("paper");
 const scissorsCard = document.getElementById("scissors");
 const tabCards = [rockCard, paperCard, scissorsCard];
+const fighterRockCard = document.getElementById("adRock");
+const fighterPaperCard = document.getElementById("adPaper");
+const fighterScissorsCard = document.getElementById("adScissors");
+const fighterTabCards = [fighterRockCard, fighterPaperCard, fighterScissorsCard];
 const cardNames = document.querySelectorAll("#player span");
 const fighterCardNames = document.querySelectorAll("#fighterCards span");
-const playerScoreDisplay = document.getElementById("playerScore");
-const fighterScoreDisplay = document.getElementById("fighterScore");
 let playerScore = 0;
 let fighterScore = 0;
 const languagesDisplay = document.getElementById("languages");
@@ -46,8 +48,15 @@ function chooseLanguage(language){
 }
 
 function display(idCard){
-    document.getElementsByClassName("visible")[0].classList.add("hidden");
-    document.getElementsByClassName("visible")[0].classList.remove("visible");
+    const bastien = document.getElementById("bastien");
+    if(bastien.classList.contains("visible")) {
+        bastien.classList.add("hidden");
+        bastien.classList.remove("visible");
+    }
+    for(const fighterCard of fighterTabCards){
+        fighterCard.classList.add("hidden");
+        fighterCard.classList.remove("visible");
+    }
     document.getElementById(`${idCard}`).classList.add("visible");
 }
 
@@ -81,6 +90,8 @@ function play(){
 
 function updatePoints(robotHand){
     const result = document.getElementById("result");
+    const playerScoreDisplay = document.getElementById("playerScore");
+    const fighterScoreDisplay = document.getElementById("fighterScore");
     if((robotHand===0 && selectedCard===rockCard) || (robotHand===1 && selectedCard===paperCard) ||
         (robotHand===2 && selectedCard===scissorsCard)){
         result.innerHTML = "DRAW!";
