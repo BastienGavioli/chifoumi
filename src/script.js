@@ -1,15 +1,15 @@
 const languagesList = {
-    "dutch": dutch = ["Steen", "Papier", "Schaar", "TALEN"],
-    "english": english = ["Rock", "Paper", "Scissors", "LANGUAGES"],
-    "esperento": esperento = ["Ŝtono", "Papero", "Tondilo", "LINGVOJ"],
-    "french": french = ["Pierre", "Papier", "Ciseaux", "LANGUES"],
-    "german": german = ["Stein", "Papier", "Schere", "SPRACHEN"],
-    "italian" : italian = ["Sasso", "Carta", "Forbici", "LINGUE"],
-    "japanese": japanese = ["グー", "パー", "チョキ", "他言語版"],
-    "occitan": occitan = ["Pèira", "Fuèlha", "Talhants", "LENGAS"],
-    "portuguese": portuguese = ["Pedra", "Papel", "Tesoura", "LÍNGUAS"],
-    "russian": russian = ["Камень", "Бумага", "Ножницы", "ЯЗЫКОВ"],
-    "spanish": spanish = ["Piedra", "Papel", "Tijera", "IDIOMAS"]
+    "dutch": dutch = ["Steen", "Papier", "Schaar", "TALEN", "SPEEL"],
+    "english": english = ["Rock", "Paper", "Scissors", "LANGUAGES", "PLAY"],
+    "esperanto": esperento = ["Ŝtono", "Papero", "Tondilo", "LINGVOJ", "LUDI"],
+    "french": french = ["Pierre", "Papier", "Ciseaux", "LANGUES", "JOUER"],
+    "german": german = ["Stein", "Papier", "Schere", "SPRACHEN", "SPIELEN"],
+    "italian" : italian = ["Sasso", "Carta", "Forbici", "LINGUE", "GIOCA"],
+    "japanese": japanese = ["グー", "パー", "チョキ", "他言語版", "プレイ"],
+    "occitan": occitan = ["Pèira", "Fuèlha", "Talhants", "LENGAS", "JOGAR"],
+    "portuguese": portuguese = ["Pedra", "Papel", "Tesoura", "LÍNGUAS", "JOGAR"],
+    "russian": russian = ["Камень", "Бумага", "Ножницы", "ЯЗЫКОВ", "ИГРАТЬ"],
+    "spanish": spanish = ["Piedra", "Papel", "Tijera", "IDIOMAS", "JUGAR"]
 }
 let selectedCard = null;
 const rockCard = document.getElementById("rock");
@@ -41,6 +41,7 @@ function chooseLanguage(language){
         fighterCardNames[i].innerHTML = languagesList[language][i];
     }
     document.getElementById("languages-title").innerHTML = languagesList[language][3];
+    document.getElementById("playButton").innerHTML = languagesList[language][4];
 }
 
 function display(idCard){

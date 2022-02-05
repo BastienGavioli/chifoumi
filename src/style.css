@@ -33,6 +33,8 @@ nav > a{
     padding: 1px 15px;
     position: absolute;
     top: 50px;
+    background-color: #0061e4;
+    color: #FFFFFF;
 }
 
 #languages a{
@@ -40,7 +42,6 @@ nav > a{
 }
 #parameters:hover #languages{
     display: block;
-    background-color: #0061e4;
 }
 
 h4{
@@ -49,7 +50,7 @@ h4{
 }
 
 main{
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 #player{
@@ -82,17 +83,18 @@ button{
 }
 
 #scissors, #adScissors{
-    background-color: #008000   ;
+    background-color: #008000;
 }
 
 #playerScore, #fighterScore{
     font-size: 20px;
+    margin: 5px 0;
 }
 
 #playButton{
-    padding: 2px 25px;
     background-color: #663399;
     color: gray;
+    text-align: center;
 }
 
 #bastien{
