@@ -28,14 +28,9 @@ const languagesDisplay = document.getElementById("languages");
 
 function chosenCard(button){
     for (const card of tabCards) card.style.border = "solid 2px black";
-    if(tabCards.includes(button)) {
-        button.style.border = "solid 5px black";
-        selectedCard = button;
-        document.getElementById("playButton").style.color = "#FFFFFF";
-    } else{
-        selectedCard = null;
-        document.getElementById("playButton").style.color = "gray";
-    }
+    button.style.border = "solid 5px black";
+    selectedCard = button;
+    document.getElementById("playButton").style.color = "#FFFFFF";
 }
 
 function chooseLanguage(language){
@@ -97,7 +92,6 @@ function updatePoints(robotHand){
         result.innerHTML = "DRAW!";
         result.style.color = "#D4AC0D";
     }
-
     else if((robotHand===0 && selectedCard===paperCard) || (robotHand===1 && selectedCard===scissorsCard) ||
         (robotHand===2 && selectedCard===rockCard)){
         result.innerHTML = "YOU WIN!";

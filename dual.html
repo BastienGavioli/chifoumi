@@ -2,10 +2,10 @@
 <html lang="fr">
 <head>
     <title>Chifoumi</title>
-    <link rel="stylesheet" type="text/css" href="src/style.css">
+    <link rel="stylesheet" type="text/css" href="src/style2.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer type="text/javascript" src="src/script.js"></script>
+    <script defer type="text/javascript" src="src/script2.js"></script>
 </head>
 <body>
 <header>
@@ -32,44 +32,41 @@
     </nav>
 </header>
 <main>
+    <h3 style="text-align: center">PLAYER 1</h3>
     <div id="player">
-        <div id="cards">
-            <button onclick="chosenCard(this);" id="rock">
-                <img src="resources/rock.png" alt="">
-                <span>Rock</span>
-            </button>
-            <button onclick="chosenCard(this);" id="paper">
-                <img src="resources/paper.png" alt="">
-                <span>Paper</span>
-            </button>
-            <button onclick="chosenCard(this);" id="scissors">
-                <img src="resources/scissors.png" alt="">
-                <span>Scissors</span>
-            </button>
-        </div>
+        <button class="visible" onclick="chosenCard(this);" id="rock">
+            <img src="resources/rock.png" alt="">
+            <span>Rock</span>
+        </button>
+        <button class="visible" onclick="chosenCard(this);" id="paper">
+            <img src="resources/paper.png" alt="">
+            <span>Paper</span>
+        </button>
+        <button class="visible" onclick="chosenCard(this);" id="scissors">
+            <img src="resources/scissors.png" alt="">
+            <span>Scissors</span>
+        </button>
+    </div>
+    <div id="score">
         <p id="playerScore">0</p>
-        <button  id="playButton" onclick="play()">PLAY</button>
+        <button  id="playButton" onclick="dualPlay()">PLAY</button>
         <p id="fighterScore">0</p>
     </div>
     <div id="fighter">
-        <div id="fighterCards">
-            <button class="visible" id="bastien">
-                <img src="resources/b.png" alt="">
-            </button>
-            <button class="hidden" id="adRock">
-                <img src="resources/rock.png" alt="">
-                <span>Rock</span>
-            </button>
-            <button class="hidden" id="adPaper">
-                <img src="resources/paper.png" alt="">
-                <span>Paper</span>
-            </button>
-            <button class="hidden" id="adScissors">
-                <img src="resources/scissors.png" alt="">
-                <span>Scissors</span>
-            </button>
-        </div>
+        <button class="hidden" id="adRock" onclick="chosenCard(this);">
+            <img src="resources/rock.png" alt="">
+            <span>Rock</span>
+        </button>
+        <button class="hidden" id="adPaper" onclick="chosenCard(this);">
+            <img src="resources/paper.png" alt="">
+            <span>Paper</span>
+        </button>
+        <button class="hidden" id="adScissors" onclick="chosenCard(this);">
+            <img src="resources/scissors.png" alt="">
+            <span>Scissors</span>
+        </button>
     </div>
+    <h3 style="text-align: center">PLAYER 2</h3>
     <p id="result"></p>
 </main>
 </body>
