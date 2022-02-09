@@ -14,7 +14,7 @@
         <a href="dual.html">DUO</a>
         <div id="parameters">
             <img src="resources/parameters.png" alt="Parameters" onclick="displayParameters();">
-            <div class="hidden" id="languages">
+            <div class="hiddenSolo" id="languages">
                 <h4 id="languages-title">LANGUAGES</h4>
                 <p><a onclick="chooseLanguage('german');">Deutsch</a></p>
                 <p><a onclick="chooseLanguage('english');">English</a></p>
@@ -33,42 +33,40 @@
 </header>
 <main>
     <div id="player">
-        <div id="cards">
-            <button onclick="chosenCard(this);" id="rock">
-                <img src="resources/rock.png" alt="">
-                <span>Rock</span>
-            </button>
-            <button onclick="chosenCard(this);" id="paper">
-                <img src="resources/paper.png" alt="">
-                <span>Paper</span>
-            </button>
-            <button onclick="chosenCard(this);" id="scissors">
-                <img src="resources/scissors.png" alt="">
-                <span>Scissors</span>
-            </button>
-        </div>
+        <button onclick="chosenCardSolo(this);" id="rock">
+            <img src="resources/rock.png" alt="">
+            <span>Rock</span>
+        </button>
+        <button onclick="chosenCardSolo(this);" id="paper">
+            <img src="resources/paper.png" alt="">
+            <span>Paper</span>
+        </button>
+        <button onclick="chosenCardSolo(this);" id="scissors">
+            <img src="resources/scissors.png" alt="">
+            <span>Scissors</span>
+        </button>
+    </div>
+    <div id="score">
         <p id="playerScore">0</p>
-        <button  id="playButton" onclick="play()">PLAY</button>
+        <button  id="playButton" onclick="playSolo()">PLAY</button>
         <p id="fighterScore">0</p>
     </div>
     <div id="fighter">
-        <div id="fighterCards">
-            <button class="visible" id="bastien">
-                <img src="resources/b.png" alt="">
-            </button>
-            <button class="hidden" id="adRock">
-                <img src="resources/rock.png" alt="">
-                <span>Rock</span>
-            </button>
-            <button class="hidden" id="adPaper">
-                <img src="resources/paper.png" alt="">
-                <span>Paper</span>
-            </button>
-            <button class="hidden" id="adScissors">
-                <img src="resources/scissors.png" alt="">
-                <span>Scissors</span>
-            </button>
-        </div>
+        <button class="visibleSolo" id="bastien">
+            <img src="resources/b.png" alt="">
+        </button>
+        <button class="hiddenSolo" id="adRock">
+            <img src="resources/rock.png" alt="">
+            <span>Rock</span>
+        </button>
+        <button class="hiddenSolo" id="adPaper">
+            <img src="resources/paper.png" alt="">
+            <span>Paper</span>
+        </button>
+        <button class="hiddenSolo" id="adScissors">
+            <img src="resources/scissors.png" alt="">
+            <span>Scissors</span>
+        </button>
     </div>
     <p id="result"></p>
 </main>

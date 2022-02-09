@@ -11,32 +11,34 @@ const languagesList = {
     "russian": russian = ["Камень", "Бумага", "Ножницы", "ЯЗЫКОВ", "ИГРАТЬ"],
     "spanish": spanish = ["Piedra", "Papel", "Tijera", "IDIOMAS", "JUGAR"]
 }
-let selectedCard = null;
-const rockCard = document.getElementById("rock");
-const paperCard = document.getElementById("paper");
-const scissorsCard = document.getElementById("scissors");
-const tabCards = [rockCard, paperCard, scissorsCard];
-const fighterRockCard = document.getElementById("adRock");
-const fighterPaperCard = document.getElementById("adPaper");
-const fighterScissorsCard = document.getElementById("adScissors");
-const fighterTabCards = [fighterRockCard, fighterPaperCard, fighterScissorsCard];
-const cardNames = document.querySelectorAll("#player span");
-const fighterCardNames = document.querySelectorAll("#fighterCards span");
-let playerScore = 0;
-let fighterScore = 0;
+let selectedCardP1 = null;
+let selectedCardP2 = null;
+let step = 1;
+const rockP1 = document.getElementById("rock");
+const paperP1 = document.getElementById("paper");
+const scissorsP1 = document.getElementById("scissors");
+const tabCardsP1 = [rockP1, paperP1, scissorsP1];
+const rockP2 = document.getElementById("adRock");
+const paperP2 = document.getElementById("adPaper");
+const scissorsP2 = document.getElementById("adScissors");
+const tabCardsP2 = [rockP2, paperP2, scissorsP2];
+const cardNamesP1 = document.querySelectorAll("#player span");
+const cardNamesP2 = document.querySelectorAll("#fighter span");
+let P1Score = 0;
+let P2Score = 0;
 const languagesDisplay = document.getElementById("languages");
 
-function chosenCard(button){
-    for (const card of tabCards) card.style.border = "solid 2px black";
+function chosenCardSolo(button){
+    for (const card of tabCardsP1) card.style.border = "solid 2px black";
     button.style.border = "solid 5px black";
-    selectedCard = button;
+    selectedCardP1 = button;
     document.getElementById("playButton").style.color = "#FFFFFF";
 }
 
 function chooseLanguage(language){
-    for(let i=0; i < cardNames.length; i++) {
-        cardNames[i].innerHTML = languagesList[language][i];
-        fighterCardNames[i].innerHTML = languagesList[language][i];
+    for(let i=0; i < 3; i++) {
+        cardNamesP1[i].innerHTML = languagesList[language][i];
+        cardNamesP2[i].innerHTML = languagesList[language][i];
     }
     document.getElementById("languages-title").innerHTML = languagesList[language][3];
     document.getElementById("playButton").innerHTML = languagesList[language][4];
@@ -44,65 +46,121 @@ function chooseLanguage(language){
 
 function display(idCard){
     const bastien = document.getElementById("bastien");
-    if(bastien.classList.contains("visible")) {
-        bastien.classList.add("hidden");
-        bastien.classList.remove("visible");
+    if(bastien.classList.contains("visibleSolo")) {
+        bastien.classList.add("hiddenSolo");
+        bastien.classList.remove("visibleSolo");
     }
-    for(const fighterCard of fighterTabCards){
-        fighterCard.classList.add("hidden");
-        fighterCard.classList.remove("visible");
+    for(const fighterCard of tabCardsP2){
+        fighterCard.classList.add("hiddenSolo");
+        fighterCard.classList.remove("visibleSolo");
     }
-    document.getElementById(`${idCard}`).classList.add("visible");
+    document.getElementById(`${idCard}`).classList.add("visibleSolo");
 }
 
 function displayParameters(){
-    if(languagesDisplay.classList.contains("hidden")){
-        languagesDisplay.classList.add("visible");
-        languagesDisplay.classList.remove("hidden");
+    if(languagesDisplay.classList.contains("hiddenSolo")){
+        languagesDisplay.classList.add("visibleSolo");
+        languagesDisplay.classList.remove("hiddenSolo");
     } else {
-        languagesDisplay.classList.add("hidden");
-        languagesDisplay.classList.remove("visible");
+        languagesDisplay.classList.add("hiddenSolo");
+        languagesDisplay.classList.remove("visibleSolo");
     }
 }
 
-function play(){
-    if(selectedCard!==null){
+function playSolo(){
+    if(selectedCardP1!==null){
         const robotHand = Math.floor(Math.random()*3);
         switch (robotHand) {
             case 0:
                 display("adRock");
+                selectedCardP2 = rockP2;
                 break;
             case 1:
                 display("adPaper");
+                selectedCardP2 = paperP2;
                 break;
             case 2:
                 display("adScissors");
+                selectedCardP2 = scissorsP2;
                 break;
         }
-        updatePoints(robotHand);
+        updatePoints();
     }
 }
 
-function updatePoints(robotHand){
+function updatePoints(){
     const result = document.getElementById("result");
-    const playerScoreDisplay = document.getElementById("playerScore");
-    const fighterScoreDisplay = document.getElementById("fighterScore");
-    if((robotHand===0 && selectedCard===rockCard) || (robotHand===1 && selectedCard===paperCard) ||
-        (robotHand===2 && selectedCard===scissorsCard)){
+    const P1ScoreDisplay = document.getElementById("playerScore");
+    const P2ScoreDisplay = document.getElementById("fighterScore");
+    if((selectedCardP2===rockP2 && selectedCardP1===rockP1) || (selectedCardP2===paperP2 && selectedCardP1===paperP1) ||
+        (selectedCardP2===scissorsP2 && selectedCardP1===scissorsP1)){
         result.innerHTML = "DRAW!";
         result.style.color = "#D4AC0D";
     }
-    else if((robotHand===0 && selectedCard===paperCard) || (robotHand===1 && selectedCard===scissorsCard) ||
-        (robotHand===2 && selectedCard===rockCard)){
+    else if((selectedCardP2===rockP2 && selectedCardP1===paperP1) || (selectedCardP2===paperP2 && selectedCardP1===scissorsP1) ||
+        (selectedCardP2===scissorsP2 && selectedCardP1===rockP1)){
         result.innerHTML = "YOU WIN!";
         result.style.color = "green";
-        playerScore++;
-        playerScoreDisplay.innerHTML = playerScore.toString();
+        P1Score++;
+        P1ScoreDisplay.innerHTML = P1Score.toString();
     }
     else{
         result.innerHTML = "YOU LOSE!";
         result.style.color = "red";
-        fighterScore++;
-        fighterScoreDisplay.innerHTML = fighterScore.toString();
+        P2Score++;
+        P2ScoreDisplay.innerHTML = P2Score.toString();
+    }
+}
+
+//DUAL CHIFOUMI
+
+function chosenCardDuo(button){
+    for (const card of tabCardsP1) card.style.border = "solid 2px black";
+    for (const card of tabCardsP2) card.style.border = "solid 2px black";
+    button.style.border = "solid 5px black";
+    if(tabCardsP1.includes(button)){
+        selectedCardP1 = button;
+    }
+    else selectedCardP2 = button;
+    document.getElementById("playButton").style.color = "#FFFFFF";
+}
+
+function playDuo(){
+    if(selectedCardP1!==null && step===1){
+        displayP2();
+        step = 2;
+    }
+    else if(selectedCardP2!==null && step===2){
+        displayP1();
+        step = 3;
+    }
+    if(step===3){
+        updatePoints();
+        selectedCardP1 = null;
+        selectedCardP2 = null;
+        step = 1;
+    }
+    document.getElementById("playButton").style.color = "gray";
+}
+
+function displayP1(){
+    for(const p2Card of tabCardsP2){
+        p2Card.classList.add("hiddenDuo");
+        p2Card.classList.remove("visibleDuo");
+    }
+    for(const p1Card of tabCardsP1) {
+        p1Card.classList.add("visibleDuo");
+        p1Card.classList.remove("hiddenDuo");
+    }
+}
+
+function displayP2(){
+    for(const p1Card of tabCardsP1){
+        p1Card.classList.add("hiddenDuo");
+        p1Card.classList.remove("visibleDuo");
+    }
+    for(const p2Card of tabCardsP2) {
+        p2Card.classList.add("visibleDuo");
+        p2Card.classList.remove("hiddenDuo");
     }
 }

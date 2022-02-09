@@ -50,11 +50,11 @@ main{
     margin-top: 10px;
 }
 
-#player{
+#score{
     text-align: center;
 }
 
-#cards, #fighter{
+#player, #fighter{
     display: flex;
     justify-content: center;
 }
@@ -66,7 +66,7 @@ button{
     max-width: 112px;
 }
 
-#cards img, #fighter img{
+#player img, #fighter img{
     max-width: 100%;
     height: auto;
 }
@@ -99,12 +99,20 @@ button{
     color: #0061e4;
 }
 
-.hidden{
+.hiddenSolo{
     display: none;
 }
 
-.visible{
+.visibleSolo{
     display: block;
+}
+
+.hiddenDuo{
+    visibility: hidden;
+}
+
+.visibleDuo{
+    visibility: visible;
 }
 
 #result{
