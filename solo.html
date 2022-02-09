@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <title>CHIFOUMI</title>
+    <title>Chifoumi</title>
     <link rel="stylesheet" type="text/css" href="src/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer type="text/javascript" src="src/script.js"></script>
 </head>
 <body>
 <header>
@@ -32,10 +33,43 @@
     </nav>
 </header>
 <main>
-    <div id="accueil">
-        <p><a href="solo.html">SINGLE PLAYER</a></p>
-        <p><a href="dual.html">TWO PLAYERS</a></p>
+    <div id="player">
+        <button onclick="chosenCardSolo(this);" id="rock">
+            <img src="resources/rock.png" alt="">
+            <span>Rock</span>
+        </button>
+        <button onclick="chosenCardSolo(this);" id="paper">
+            <img src="resources/paper.png" alt="">
+            <span>Paper</span>
+        </button>
+        <button onclick="chosenCardSolo(this);" id="scissors">
+            <img src="resources/scissors.png" alt="">
+            <span>Scissors</span>
+        </button>
     </div>
+    <div id="score">
+        <p id="playerScore">0</p>
+        <button  id="playButton" onclick="playSolo()">PLAY</button>
+        <p id="fighterScore">0</p>
+    </div>
+    <div id="fighter">
+        <button class="visibleSolo" id="bastien">
+            <img src="resources/b.png" alt="">
+        </button>
+        <button class="hiddenSolo" id="adRock">
+            <img src="resources/rock.png" alt="">
+            <span>Rock</span>
+        </button>
+        <button class="hiddenSolo" id="adPaper">
+            <img src="resources/paper.png" alt="">
+            <span>Paper</span>
+        </button>
+        <button class="hiddenSolo" id="adScissors">
+            <img src="resources/scissors.png" alt="">
+            <span>Scissors</span>
+        </button>
+    </div>
+    <p id="result"></p>
 </main>
 </body>
 </html>

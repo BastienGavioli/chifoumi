@@ -1,4 +1,5 @@
 body{
+    width: 100%;
     margin: 0;
     background-image: url("../resources/background.jpg");
 }
@@ -15,6 +16,10 @@ nav > a{
     color: #FFFFFF;
     text-decoration: none;
     font-size: 30px;
+}
+
+nav > a:hover{
+    border-bottom: #FFFFFF;
 }
 
 #parameters{
@@ -48,6 +53,21 @@ h4{
 
 main{
     margin-top: 10px;
+}
+
+#accueil p{
+    border: solid 2px black;
+    margin: 50px 25%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+
+#accueil a{
+    color: rebeccapurple;
+    font-size: 30px;
+    text-decoration: none;
 }
 
 #score{
