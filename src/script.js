@@ -99,14 +99,14 @@ function updatePoints(){
     }
     else if((selectedCardP2===rockP2 && selectedCardP1===paperP1) || (selectedCardP2===paperP2 && selectedCardP1===scissorsP1) ||
         (selectedCardP2===scissorsP2 && selectedCardP1===rockP1)){
-        result.innerHTML = "YOU WIN!";
-        result.style.color = "green";
+        result.innerHTML = "PLAYER 1 WINS!";
+        result.style.color = "#D4AC0D";
         P1Score++;
         P1ScoreDisplay.innerHTML = P1Score.toString();
     }
     else{
-        result.innerHTML = "YOU LOSE!";
-        result.style.color = "red";
+        result.innerHTML = "PLAYER 2 WINS!";
+        result.style.color = "#D4AC0D";
         P2Score++;
         P2ScoreDisplay.innerHTML = P2Score.toString();
     }
