@@ -1,7 +1,7 @@
 body{
     width: 100%;
     margin: 0;
-    background-image: url("../resources/background.jpg");
+    background-color: #860f0f;
 }
 
 header{
@@ -29,10 +29,11 @@ nav a{
 	padding: 10px;
 	color: #FFF;
 	text-decoration: none;
+    border-top: solid rebeccapurple;
 }
 
 nav a:hover{
-	border-top: solid;
+	border-top: solid #FFF;
 }
 
 .menu{
@@ -111,9 +112,10 @@ main{
 
 button{
     margin: 5px;
-    border: solid 2px black;
+    border: solid 4px white;
     font-size: 20px;
     max-width: 112px;
+    border-radius: 5%;
 }
 
 #player img, #fighter img{
@@ -122,7 +124,7 @@ button{
 }
 
 #rock, #adRock {
-    background-color: #0000FF;
+    background-color: #00aeff;
 }
 
 #paper, #adPaper{
@@ -141,12 +143,13 @@ button{
 #playButton{
     background-color: #663399;
     color: gray;
+    border: solid 2px black;
     text-align: center;
 }
 
-#bastien{
+#computer{
     background-color: #000000;
-    color: #0061e4;
+    color: #FFF;
 }
 
 .hiddenSolo{
